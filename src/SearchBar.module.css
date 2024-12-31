@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+  width: 40rem;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.searchIcon,
+.closeIcon {
+  height: 50%;
+  width: auto;
+}
+
+.closeIcon {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.closeIcon:hover {
+  opacity: 0.6;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Animation for dropdown appearance */
+@keyframes slideBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultsList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 60vh;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+.resultsList.visible {
+  display: flex;
+  animation: slideBounce 0.4s ease forwards;
+  pointer-events: auto;
+}
+
+.resultItem {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.resultItem:hover {
+  background-color: #f0f0f0;
+}
+
+.centerElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
