@@ -1,6 +1,6 @@
-# React SearchBar Component
+# react-api-search
 
-A highly customizable, debounce-enabled, and fully-featured React SearchBar component designed to fetch and display search results asynchronously. Ideal for scenarios where the search query is used to fetch data from APIs or databases, with built-in support for loading, error handling, and no-result states.
+A highly customizable, debounce-enabled, and fully-featured React API Search component designed to fetch and display search results asynchronously. Ideal for scenarios where the search query is used to fetch data from APIs or databases, with built-in support for loading, error handling, and no-result states.
 
 ## Features
 
@@ -14,26 +14,26 @@ A highly customizable, debounce-enabled, and fully-featured React SearchBar comp
 ## Installation
 
 ```bash
-npm install type-search-api
+npm install react-api-search
 ```
 
 or
 
 ```bash
-yarn add type-search-api
+yarn add react-api-search
 ```
 
 ## Usage
 
 ```tsx
 import React, { useState } from 'react';
-import SearchBar from 'react-searchbar-component';
+import SearchBar from 'react-api-search';
 
 const MyComponent = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const fetchSearchResults = async (query: string) => {
-    const response = await fetch(\`https://api.example.com/search?q=\${query}\`);
+    const response = await fetch('https://api.example.com/search?q=${query}');
     const data = await response.json();
     return data.results; // return an array of results
   };
@@ -50,7 +50,7 @@ const MyComponent = () => {
         fetchData={fetchSearchResults}
         renderItem={renderSearchResult}
         onSelect={handleItemSelect}
-        placeholder="Search for items..."
+        placeholder='Search for items...'
         debounceDelay={300}
       />
       {selectedItem && <div>You selected: {selectedItem.name}</div>}
@@ -88,12 +88,12 @@ export default MyComponent;
 ```tsx
 <SearchBar
   fetchData={async (query: string) => {
-    const response = await fetch(\`https://api.example.com/search?q=\${query}\`);
+    const response = await fetch('https://api.example.com/search?q=${query}');
     return response.json();
   }}
   renderItem={(item) => <div>{item.name}</div>}
   onSelect={(item) => console.log('Selected:', item)}
-  placeholder="Search for items..."
+  placeholder='Search for items...'
   loadingElement={<div>Loading...</div>}
   emptyElement={<div>No results found</div>}
 />
