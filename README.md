@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React API Search
 
 A highly customizable, debounce-enabled, and fully-featured React API Search component designed to fetch and display search results asynchronously. Ideal for scenarios where the search query is used to fetch data from APIs or databases, with built-in support for loading, error handling, and no-result states.
@@ -64,23 +63,36 @@ export default MyComponent;
 
 ## Props
 
-| Prop                  | Type                              | Description                                                | Default Value                     |
-| --------------------- | --------------------------------- | ---------------------------------------------------------- | --------------------------------- |
-| `placeholder`         | `string`                          | Placeholder text for the input field.                      | `'Search...'`                     |
-| `fetchData`           | `(query: string) => Promise<T[]>` | A function that fetches data based on the search query.    | N/A                               |
-| `renderItem`          | `(item: T) => JSX.Element`        | A function to render each search result item.              | N/A                               |
-| `onSelect`            | `(item: T) => void`               | A callback function triggered when a user selects an item. | `undefined`                       |
-| `loadingElement`      | `JSX.Element`                     | JSX to display while results are loading.                  | `<div>Loading...</div>`           |
-| `emptyElement`        | `JSX.Element`                     | JSX to display when no results are found.                  | `<div>No results found</div>`     |
-| `errorElement`        | `JSX.Element`                     | JSX to display when an error occurs.                       | `<div>Something went wrong</div>` |
-| `debounceDelay`       | `number`                          | The debounce delay in milliseconds.                        | `500`                             |
-| `containerClassName`  | `string`                          | Custom class for the search bar container.                 | `undefined`                       |
-| `inputClassName`      | `string`                          | Custom class for the input field.                          | `undefined`                       |
-| `dropdownClassName`   | `string`                          | Custom class for the dropdown containing search results.   | `undefined`                       |
-| `itemClassName`       | `string`                          | Custom class for each search result item.                  | `undefined`                       |
-| `hideSearchIcon`      | `boolean`                         | Whether to hide the search icon.                           | `false`                           |
-| `searchIconClassName` | `string`                          | Custom class for the search icon.                          | `undefined`                       |
-| `closeIconClassName`  | `string`                          | Custom class for the close icon.                           | `undefined`                       |
+| Prop                    | Type                            | Description                                                | Default Value                     |
+| ----------------------- | ------------------------------- | ---------------------------------------------------------- | --------------------------------- |
+| placeholder             | string                          | Placeholder text for the input field.                      | 'Search...'                       |
+| fetchData               | (query: string) => Promise<T[]> | A function that fetches data based on the search query.    | N/A                               |
+| renderItem              | (item: T) => JSX.Element        | A function to render each search result item.              | N/A                               |
+| onSelect                | (item: T) => void               | A callback function triggered when a user selects an item. | undefined                         |
+| loadingElement          | JSX.Element                     | JSX to display while results are loading.                  | `<div>Loading...</div>`           |
+| emptyElement            | JSX.Element                     | JSX to display when no results are found.                  | `<div>No results found</div>`     |
+| errorElement            | JSX.Element                     | JSX to display when an error occurs.                       | `<div>Something went wrong</div>` |
+| debounceDelay           | number                          | The debounce delay in milliseconds.                        | 500                               |
+| containerClassName      | string                          | Custom class for the search bar container.                 | undefined                         |
+| inputClassName          | string                          | Custom class for the input field.                          | undefined                         |
+| dropdownClassName       | string                          | Custom class for the dropdown containing search results.   | undefined                         |
+| itemClassName           | string                          | Custom class for each search result item.                  | undefined                         |
+| hideSearchIcon          | boolean                         | Whether to hide the search icon.                           | false                             |
+| searchIconClassName     | string                          | Custom class for the search icon.                          | undefined                         |
+| closeIconClassName      | string                          | Custom class for the close icon.                           | undefined                         |
+| inputFontColor          | string                          | Font color of the input field.                             | #000                              |
+| inputBorderRadius       | string                          | Border radius of the input field.                          | '8px'                             |
+| inputBorderColor        | string                          | Border color of the input field.                           | #ccc                              |
+| inputFontSize           | string                          | Font size of the input field.                              | '16px'                            |
+| inputHeight             | string                          | Height of the input field.                                 | '45px'                            |
+| inputBackgroundColor    | string                          | Background color of the input field.                       | #fff                              |
+| searchIconColor         | string                          | Color of the search icon.                                  | #888                              |
+| closeIconColor          | string                          | Color of the close icon.                                   | #888                              |
+| dropDownBackgroundColor | string                          | Background color of the dropdown.                          | #fff                              |
+| dropDownBorderColor     | string                          | Border color of the dropdown.                              | #ccc                              |
+| dropDownMaxHeight       | string                          | Maximum height of the dropdown.                            | '60vh'                            |
+| dropDownBorderRadius    | string                          | Border radius of the dropdown.                             | '8px'                             |
+| scrollBarColor          | string                          | Color of the scrollbar inside the dropdown.                | #ccc                              |
 
 ## Example
 
@@ -100,19 +112,6 @@ export default MyComponent;
 />
 ```
 
-### Customizing the Appearance
-
-You can customize the appearance of the search bar using the following props:
-
-- `containerClassName`
-- `inputClassName`
-- `dropdownClassName`
-- `itemClassName`
-- `searchIconClassName`
-- `closeIconClassName`
-
-These props allow you to apply your custom styles or use CSS modules.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/ghosnkarl/react-api-search/blob/main/LICENSE) file for more information.
@@ -131,6 +130,4 @@ For more information, please checkout the [CONTRIBUTIONS](https://github.com/gho
 
 ---
 
-**Note**: This component uses TypeScript and provides full type safety. It can be easily integrated into any TypeScript or JavaScript-based React project.
-=======
->>>>>>> main
+# **Note**: This component uses TypeScript and provides full type safety. It can be easily integrated into any TypeScript or JavaScript-based React project.

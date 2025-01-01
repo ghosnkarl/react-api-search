@@ -14,18 +14,18 @@ import { MdClose } from 'react-icons/md';
  * @param {string} [props.placeholder='Search...'] The placeholder text for the input field.
  * @param {function} props.fetchData A function that fetches data based on the query string. Should return a promise with the results.
  * @param {function} props.renderItem A function that renders an individual search result item.
- * @param {function} props.onSelect Callback function triggered when a user selects a search result.
- * @param {React.ReactNode} [props.loadingElement=<div>Loading...</div>] The JSX to display when loading.
+ * @param {function} props.onSelect Callback function triggered when a user selects an item from the search results.
+ * @param {React.ReactNode} [props.loadingElement=<div>Loading...</div>] The JSX to display when loading search results.
  * @param {React.ReactNode} [props.emptyElement=<div>No results found</div>] The JSX to display when no results are found.
- * @param {React.ReactNode} [props.errorElement=<div>Something went wrong</div>] The JSX to display when an error occurs.
- * @param {number} [props.debounceDelay=500] The debounce delay (in milliseconds) to wait before calling the `fetchData` function after the user stops typing.
- * @param {string} [props.containerClassName] Custom class for the search bar container.
- * @param {string} [props.inputClassName] Custom class for the input field.
- * @param {string} [props.dropdownClassName] Custom class for the dropdown containing search results.
- * @param {string} [props.itemClassName] Custom class for each search result item.
- * @param {boolean} [props.hideSearchIcon=false] Whether to hide the search icon in the input field.
- * @param {string} [props.searchIconClassName] Custom class for the search icon.
- * @param {string} [props.closeIconClassName] Custom class for the close icon.
+ * @param {React.ReactNode} [props.errorElement=<div>Something went wrong</div>] The JSX to display when an error occurs during fetching.
+ * @param {number} [props.debounceDelay=500] The debounce delay (in milliseconds) to wait before calling `fetchData` after the user stops typing.
+ * @param {boolean} [props.hideSearchIcon=false] Whether to hide the search icon inside the input field.
+ * @param {string} [props.containerClassName] Custom CSS class name applied to the search bar container.
+ * @param {string} [props.inputClassName] Custom CSS class name applied to the search input field.
+ * @param {string} [props.dropdownClassName] Custom CSS class name applied to the dropdown containing search results.
+ * @param {string} [props.itemClassName] Custom CSS class name applied to each individual search result item.
+ * @param {string} [props.searchIconClassName] Custom CSS class name applied to the search icon.
+ * @param {string} [props.closeIconClassName] Custom CSS class name applied to the close icon used for clearing the search input.
  *
  * @returns The rendered SearchBar component.
  */
