@@ -118,7 +118,15 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## Contributing
 
-We welcome contributions to the project. Please fork the repository, create a new branch, make your changes, and open a pull request.
+Contributions are welcome! 🎉
+
+1. Fork the project.
+2. Create a feature branch (git checkout -b feature-name).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature-name).
+5. Open a Pull Request.
+
+For more information, please checkout the [CONTRIBUTIONS](https://github.com/ghosnkarl/react-api-search/blob/files/CONTRIBUTIONS.md) document.
 
 ---
 

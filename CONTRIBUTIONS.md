@@ -16,15 +16,14 @@ There are several ways you can contribute to this project:
 
 git clone https://github.com/ghosnkarl/react-api-search.git
 cd react-api-search
-\`\`\`
 
 ## Setting Up the Development Environment
 
 1. Install dependencies:
 
-   \`\`\`bash
-   npm install
-   \`\`\`
+   `bash
+npm install
+`
 
 2. Since the library cannot run as a standalone app, use \`npm link\` to test it in a separate project:
 
