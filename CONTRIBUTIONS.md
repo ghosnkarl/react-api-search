@@ -1,6 +1,6 @@
-# Contributing to React API Search
+# Contributing to React SearchBar Component
 
-Thank you for considering contributing to **React API Search**! We welcome contributions from the community and appreciate your interest in improving this project.
+Thank you for considering contributing to the **Type Search Api**! We welcome contributions from the community and appreciate your interest in improving this project.
 
 ## How to Contribute
 
@@ -12,10 +12,19 @@ There are several ways you can contribute to this project:
 4. **Update Documentation**
 5. **Improve Tests**
 
-# Fork the repository on GitHub and clone it
+## Prerequisites
+
+Before you start, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+
+If you're new to this project, fork the repository and clone your fork to your local machine:
 
 ```bash
-git clone https://github.com/ghosnkarl/react-api-search.git
+# Fork the repository on GitHub and clone it
+git clone https://github.com/YOUR-USERNAME/react-searchbar-component.git
+cd react-searchbar-component
 ```
 
 ## Setting Up the Development Environment
@@ -26,28 +35,15 @@ git clone https://github.com/ghosnkarl/react-api-search.git
    npm install
    ```
 
-2. Since the library cannot run as a standalone app, use \`npm link\` to test it in a separate project:
+2. Start the development server:
 
    ```bash
-   npm link
+   npm start
    ```
 
-3. In your test project (e.g., a React app where you want to test the library), link the library:
+   This will run the app in development mode. Open `http://localhost:3000` to view the project.
 
-   ```bash
-   cd path-to-your-test-project
-   npm link react-api-search
-   ```
-
-4. Now, import the library in your test project and test the functionality.
-
-5. To unlink after testing:
-
-   ```bash
-   npm unlink react-api-search
-   ```
-
-6. To run tests:
+3. To run tests:
 
    ```bash
    npm test
@@ -55,20 +51,20 @@ git clone https://github.com/ghosnkarl/react-api-search.git
 
 ## Making Changes
 
-1. **Create a new branch**:
+1. **Create a new branch**:  
    Always create a new branch for your changes. Use a descriptive name for the branch that reflects the feature or bug you're working on.
 
    ```bash
    git checkout -b feature-name
    ```
 
-2. **Make your changes**:
+2. **Make your changes**:  
    Edit the necessary files, and follow the existing code style and conventions.
 
-3. **Write tests** (if applicable):
-   If your change involves new functionality or fixes a bug, please add tests. The project uses [Jest](https://jestjs.io/) for testing.
+3. **Write tests** (if applicable):  
+   If your change involves new functionality or fixes a bug, please add tests. We use [Jest](https://jestjs.io/) for testing, and it's important to ensure that your changes are covered by tests.
 
-4. **Commit your changes**:
+4. **Commit your changes**:  
    Commit your changes with a clear, concise message that explains the purpose of your modification.
 
    ```bash
@@ -76,15 +72,15 @@ git clone https://github.com/ghosnkarl/react-api-search.git
    git commit -m "Add feature XYZ"
    ```
 
-5. **Push your changes**:
+5. **Push your changes**:  
    Push your branch to your forked repository.
 
    ```bash
    git push origin feature-name
    ```
 
-6. **Open a Pull Request**:
-   Go to the [GitHub repository](https://github.com/ghosnkarl/react-api-search) and open a pull request (PR). Describe the changes you've made and the reason for them.
+6. **Open a Pull Request**:  
+   Go to the [GitHub repository](https://github.com/YOUR-USERNAME/react-searchbar-component) and open a pull request (PR). Describe the changes you've made and the reason for them.
 
 ## Code Style
 
@@ -121,12 +117,16 @@ Example commit message format:
 
 ## Reporting Issues
 
-If you find a bug or issue, please report it by opening a new issue in the [Issues section](https://github.com/ghosnkarl/react-api-search/issues) of the repository. When submitting an issue, please provide:
+If you find a bug or issue, please report it by opening a new issue in the [Issues section](https://github.com/YOUR-USERNAME/react-searchbar-component/issues) of the repository. When submitting an issue, please provide:
 
 - A clear description of the problem.
 - Steps to reproduce the issue.
 - Expected vs. actual behavior.
 - Any relevant error messages or logs.
+
+## Code of Conduct
+
+By participating in this project, you agree to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). We expect all contributors to treat others with respect and kindness.
 
 ## License
 
@@ -134,4 +134,4 @@ By contributing to this project, you agree that your contributions will be licen
 
 ---
 
-Thank you for contributing! Together, we can make **React API Search** even better. 🚀
+Thank you for contributing! Together, we can make the **React SearchBar Component** even better. 🚀

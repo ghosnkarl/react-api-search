@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React API Search
 
 A highly customizable, debounce-enabled, and fully-featured React API Search component designed to fetch and display search results asynchronously. Ideal for scenarios where the search query is used to fetch data from APIs or databases, with built-in support for loading, error handling, and no-result states.
@@ -131,3 +132,5 @@ For more information, please checkout the [CONTRIBUTIONS](https://github.com/gho
 ---
 
 **Note**: This component uses TypeScript and provides full type safety. It can be easily integrated into any TypeScript or JavaScript-based React project.
+=======
+>>>>>>> main
