@@ -1,4 +1,4 @@
-# react-api-search
+# React API Search
 
 A highly customizable, debounce-enabled, and fully-featured React API Search component designed to fetch and display search results asynchronously. Ideal for scenarios where the search query is used to fetch data from APIs or databases, with built-in support for loading, error handling, and no-result states.
 
@@ -114,7 +114,7 @@ These props allow you to apply your custom styles or use CSS modules.
 
 ## License
 
-MIT License. © Karl 2024
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/ghosnkarl/react-api-search/blob/main/LICENSE) file for more information.
 
 ## Contributing
 
