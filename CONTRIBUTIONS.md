@@ -16,7 +16,6 @@ There are several ways you can contribute to this project:
 
 ```bash
 git clone https://github.com/ghosnkarl/react-api-search.git
-cd react-api-search
 ```
 
 ## Setting Up the Development Environment
@@ -136,7 +135,3 @@ By contributing to this project, you agree that your contributions will be licen
 ---
 
 Thank you for contributing! Together, we can make **React API Search** even better. 🚀
-
-```
-
-```

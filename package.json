@@ -1,5 +1,5 @@
 {
-  "name": "search-bar-component",
+  "name": "react-api-search",
   "version": "1.0.0",
   "description": "SearchBarComponent is a customizable and responsive search bar component for React applications. It provides a flexible, debounced search experience, ideal for integrating search functionality into your app. The component supports dynamic fetching of search results from a remote source, rendering custom items, and handling loading states, empty results, and error handling.",
   "main": "dist/index.js",
