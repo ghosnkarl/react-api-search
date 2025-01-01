@@ -14,75 +14,77 @@ There are several ways you can contribute to this project:
 
 # Fork the repository on GitHub and clone it
 
+```bash
 git clone https://github.com/ghosnkarl/react-api-search.git
 cd react-api-search
+```
 
 ## Setting Up the Development Environment
 
 1. Install dependencies:
 
-   `bash
-npm install
-`
+   ```bash
+   npm install
+   ```
 
 2. Since the library cannot run as a standalone app, use \`npm link\` to test it in a separate project:
 
-   \`\`\`bash
+   ```bash
    npm link
-   \`\`\`
+   ```
 
 3. In your test project (e.g., a React app where you want to test the library), link the library:
 
-   \`\`\`bash
+   ```bash
    cd path-to-your-test-project
    npm link react-api-search
-   \`\`\`
+   ```
 
 4. Now, import the library in your test project and test the functionality.
 
 5. To unlink after testing:
 
-   \`\`\`bash
+   ```bash
    npm unlink react-api-search
-   \`\`\`
+   ```
 
 6. To run tests:
 
-   \`\`\`bash
+   ```bash
    npm test
-   \`\`\`
+   ```
 
 ## Making Changes
 
-1. **Create a new branch**:  
+1. **Create a new branch**:
    Always create a new branch for your changes. Use a descriptive name for the branch that reflects the feature or bug you're working on.
 
-   \`\`\`bash
+   ```bash
    git checkout -b feature-name
-   \`\`\`
+   ```
 
-2. **Make your changes**:  
+2. **Make your changes**:
    Edit the necessary files, and follow the existing code style and conventions.
 
-3. **Write tests** (if applicable):  
+3. **Write tests** (if applicable):
    If your change involves new functionality or fixes a bug, please add tests. The project uses [Jest](https://jestjs.io/) for testing.
 
-4. **Commit your changes**:  
+4. **Commit your changes**:
    Commit your changes with a clear, concise message that explains the purpose of your modification.
 
-   \`\`\`bash
+   ```bash
    git add .
    git commit -m "Add feature XYZ"
-   \`\`\`
+   ```
 
-5. **Push your changes**:  
+5. **Push your changes**:
    Push your branch to your forked repository.
 
-   \`\`\`bash
+   ```bash
    git push origin feature-name
-   \`\`\`
+   ```
 
-6. **Open a Pull Request**:  
+6. **Open a Pull Request**:
    Go to the [GitHub repository](https://github.com/ghosnkarl/react-api-search) and open a pull request (PR). Describe the changes you've made and the reason for them.
 
 ## Code Style
@@ -103,9 +105,9 @@ The project uses [Jest](https://jestjs.io/) for testing. If you are adding new f
 
 To run tests:
 
-\`\`\`bash
+```bash
 npm test
-\`\`\`
+```
 
 ## Commit Messages
 
@@ -134,3 +136,7 @@ By contributing to this project, you agree that your contributions will be licen
 ---
 
 Thank you for contributing! Together, we can make **React API Search** even better. 🚀
+
+```
+
+```
