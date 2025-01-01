@@ -130,4 +130,4 @@ For more information, please checkout the [CONTRIBUTIONS](https://github.com/gho
 
 ---
 
-# **Note**: This component uses TypeScript and provides full type safety. It can be easily integrated into any TypeScript or JavaScript-based React project.
+**Note**: This component uses TypeScript and provides full type safety. It can be easily integrated into any TypeScript or JavaScript-based React project.
