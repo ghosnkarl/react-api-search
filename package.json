@@ -11,6 +11,10 @@
   },
   "author": "ghosnkarl",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghosnkarl/react-api-search"
+  },
   "keywords": [
     "react",
     "typescript",
