@@ -1,5 +1,4 @@
 import { useState, useEffect, ChangeEvent, useRef } from 'react';
-import classNames from 'classnames';
 import styles from './SearchBar.module.css';
 import { SearchBarProps } from './types';
 import { MdSearch } from 'react-icons/md';
@@ -39,13 +38,22 @@ function SearchBar<T>({
   emptyElement = <div>No results found</div>,
   errorElement = <div>Something went wrong</div>,
   debounceDelay = 500,
-  containerClassName,
-  inputClassName,
-  dropdownClassName,
-  itemClassName,
   hideSearchIcon = false,
-  searchIconClassName,
-  closeIconClassName,
+
+  // Styling Props with defaults
+  inputFontColor = '#000',
+  inputBorderRadius = '8px',
+  inputBorderColor = '#ccc',
+  inputFontSize = '16px',
+  inputHeight = '45px',
+  searchIconColor = '#888',
+  closeIconColor = '#888',
+  inputBackgroundColor = '#fff',
+  dropDownBackgroundColor = '#fff',
+  dropDownBorderColor = '#ccc',
+  dropDownMaxHeight = '60vh',
+  dropDownBorderRadius = '8px',
+  scrollBarColor = '#ccc',
 }: SearchBarProps<T>) {
   const [query, setQuery] = useState<string>('');
   const [results, setResults] = useState<T[]>([]);
@@ -104,14 +112,20 @@ function SearchBar<T>({
     setError(false);
   };
   return (
-    <div
-      className={classNames(styles.container, containerClassName)}
-      ref={containerRef}
-    >
-      <div className={classNames(styles.inputWrapper)}>
+    <div className={styles.container} ref={containerRef}>
+      <div
+        className={styles.inputWrapper}
+        style={{
+          height: inputHeight,
+          border: `1px solid ${inputBorderColor}`,
+          backgroundColor: inputBackgroundColor,
+          borderRadius: inputBorderRadius,
+        }}
+      >
         {!hideSearchIcon && (
           <MdSearch
-            className={classNames(styles.searchIcon, searchIconClassName)}
+            style={{ color: searchIconColor }}
+            className={styles.searchIcon}
           />
         )}
         <input
@@ -119,21 +133,31 @@ function SearchBar<T>({
           value={query}
           onChange={handleChange}
           placeholder={placeholder}
-          className={classNames(styles.input, inputClassName)}
+          className={styles.input}
+          style={{
+            color: inputFontColor,
+            fontSize: inputFontSize,
+          }}
           onFocus={() => setDropdownVisible(results && results.length > 0)}
         />
         <MdClose
-          className={classNames(styles.closeIcon, closeIconClassName)}
+          style={{ color: closeIconColor }}
+          className={styles.closeIcon}
           onClick={handleClear}
         />
       </div>
       {isDropdownVisible && (
         <ul
-          className={classNames(
-            styles.resultsList,
-            dropdownClassName,
+          className={`${styles.resultsList} ${
             isDropdownVisible && styles.visible
-          )}
+          }`}
+          style={{
+            border: `1px solid ${dropDownBorderColor}`,
+            backgroundColor: dropDownBackgroundColor,
+            maxHeight: dropDownMaxHeight,
+            borderRadius: dropDownBorderRadius,
+            scrollbarColor: `${scrollBarColor} transparent`,
+          }}
         >
           {loading && (
             <li className={styles.centerElement}>{loadingElement}</li>
@@ -147,7 +171,7 @@ function SearchBar<T>({
             results.map((item, index) => (
               <li
                 key={index}
-                className={classNames(styles.resultItem, itemClassName)}
+                className={styles.resultItem}
                 onClick={() => onSelect?.(item)}
               >
                 {renderItem(item)}

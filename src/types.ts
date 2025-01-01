@@ -28,11 +28,20 @@ export type SearchBarProps<T> = {
   emptyElement?: JSX.Element;
   errorElement?: JSX.Element;
   debounceDelay?: number;
-  containerClassName?: string;
-  inputClassName?: string;
-  dropdownClassName?: string;
-  itemClassName?: string;
   hideSearchIcon?: boolean;
-  searchIconClassName?: string;
-  closeIconClassName?: string;
+
+  //Styling Props
+  inputFontColor?: string;
+  inputBorderRadius?: string;
+  inputBorderColor?: string;
+  inputFontSize?: string;
+  inputHeight?: string;
+  inputBackgroundColor?: string;
+  searchIconColor?: string;
+  closeIconColor?: string;
+  dropDownBackgroundColor?: string;
+  dropDownBorderColor?: string;
+  dropDownMaxHeight?: string;
+  dropDownBorderRadius?: string;
+  scrollBarColor?: string;
 };
