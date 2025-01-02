@@ -1,0 +1,33 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.inputWrapper:focus-within {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.searchIcon,
+.closeIcon {
+  height: 50%;
+  width: auto;
+}
+
+.closeIcon {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.closeIcon:hover {
+  transform: rotate(90deg);
+}
+
+.input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: transparent;
+}

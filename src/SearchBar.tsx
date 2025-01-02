@@ -3,6 +3,8 @@ import styles from './SearchBar.module.css';
 import { SearchBarProps } from './types';
 import { MdSearch } from 'react-icons/md';
 import { MdClose } from 'react-icons/md';
+import Dropdown from './Dropdown';
+import InputField from './InputField';
 
 /**
  * A dynamic and customizable search bar component for fetching and displaying search results.
@@ -90,6 +92,7 @@ function SearchBar<T>({
 
     return () => clearTimeout(handler);
   }, [query, fetchData, debounceDelay]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!containerRef.current?.contains(event.target as Node)) {
@@ -101,11 +104,11 @@ function SearchBar<T>({
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleClear = () => {
+  const handleClearInput = () => {
     setQuery('');
     setResults([]);
     setDropdownVisible(false);
@@ -113,71 +116,42 @@ function SearchBar<T>({
   };
   return (
     <div className={styles.container} ref={containerRef}>
-      <div
-        className={styles.inputWrapper}
-        style={{
+      <InputField
+        query={query}
+        placeholder={placeholder}
+        hideSearchIcon={hideSearchIcon}
+        inputStyles={{
           height: inputHeight,
-          border: `1px solid ${inputBorderColor}`,
+          borderColor: inputBorderColor,
           backgroundColor: inputBackgroundColor,
           borderRadius: inputBorderRadius,
+          fontColor: inputFontColor,
+          fontSize: inputFontSize,
+          searchIconColor,
+          closeIconColor,
         }}
-      >
-        {!hideSearchIcon && (
-          <MdSearch
-            style={{ color: searchIconColor }}
-            className={styles.searchIcon}
-          />
-        )}
-        <input
-          type='text'
-          value={query}
-          onChange={handleChange}
-          placeholder={placeholder}
-          className={styles.input}
-          style={{
-            color: inputFontColor,
-            fontSize: inputFontSize,
-          }}
-          onFocus={() => setDropdownVisible(results && results.length > 0)}
-        />
-        <MdClose
-          style={{ color: closeIconColor }}
-          className={styles.closeIcon}
-          onClick={handleClear}
-        />
-      </div>
+        onInputChange={handleInputChange}
+        onClearInput={handleClearInput}
+        onFocus={() => setDropdownVisible(true)}
+      />
       {isDropdownVisible && (
-        <ul
-          className={`${styles.resultsList} ${
-            isDropdownVisible && styles.visible
-          }`}
-          style={{
-            border: `1px solid ${dropDownBorderColor}`,
+        <Dropdown
+          results={results}
+          loading={loading}
+          error={error}
+          loadingElement={loadingElement}
+          emptyElement={emptyElement}
+          errorElement={errorElement}
+          renderItem={renderItem}
+          onSelect={onSelect}
+          dropdownStyles={{
+            borderColor: dropDownBorderColor,
             backgroundColor: dropDownBackgroundColor,
             maxHeight: dropDownMaxHeight,
             borderRadius: dropDownBorderRadius,
-            scrollbarColor: `${scrollBarColor} transparent`,
+            scrollBarColor,
           }}
-        >
-          {loading && (
-            <li className={styles.centerElement}>{loadingElement}</li>
-          )}
-          {error && <li className={styles.centerElement}>{errorElement}</li>}
-          {!loading && !error && results.length === 0 && query.trim() && (
-            <li className={styles.centerElement}>{emptyElement}</li>
-          )}
-          {!loading &&
-            !error &&
-            results.map((item, index) => (
-              <li
-                key={index}
-                className={styles.resultItem}
-                onClick={() => onSelect?.(item)}
-              >
-                {renderItem(item)}
-              </li>
-            ))}
-        </ul>
+        />
       )}
     </div>
   );
