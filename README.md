@@ -26,39 +26,65 @@ yarn add react-api-search
 ## Usage
 
 ```tsx
-import React, { useState } from 'react';
 import SearchBar from 'react-api-search';
 
-const MyComponent = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const fetchSearchResults = async (query: string) => {
-    const response = await fetch('https://api.example.com/search?q=${query}');
-    const data = await response.json();
-    return data.results; // return an array of results
-  };
-
-  const renderSearchResult = (item: any) => <div>{item.name}</div>;
-
-  const handleItemSelect = (item: any) => {
-    setSelectedItem(item);
-  };
-
-  return (
-    <div>
-      <SearchBar
-        fetchData={fetchSearchResults}
-        renderItem={renderSearchResult}
-        onSelect={handleItemSelect}
-        placeholder='Search for items...'
-        debounceDelay={300}
-      />
-      {selectedItem && <div>You selected: {selectedItem.name}</div>}
-    </div>
-  );
+type Post = {
+  id: number;
+  title: string;
+  body: string;
 };
 
-export default MyComponent;
+const fetchPosts = async (query: string): Promise<Post[]> => {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?q=${encodeURIComponent(query)}`
+  );
+  if (!response.ok) throw new Error('Failed to fetch posts');
+  const data = await response.json();
+  return data;
+};
+
+function App() {
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Posts Search</h1>
+      <div style={{ width: '40rem' }}>
+        <SearchBar<Post>
+          placeholder='Search for posts...'
+          fetchData={fetchPosts}
+          loadingElement={
+            <div className='custom-loading'>Please wait, fetching data...</div>
+          }
+          emptyElement={
+            <div>No posts match your search. Try something else!</div>
+          }
+          errorElement={
+            <div>Oops, something went wrong. Please try again later.</div>
+          }
+          renderItem={(post) => (
+            <div
+              style={{ padding: '10px', borderBottom: '1px solid #ccc' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f0f0f0'; // hover background
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'; // reset background
+              }}
+            >
+              <h3 style={{ margin: 0 }}>{post.title}</h3>
+              <p style={{ margin: '5px 0', fontSize: '0.9em', color: '#555' }}>
+                {post.body}
+              </p>
+            </div>
+          )}
+          onSelect={(post) => alert(`Selected post: ${post.title}`)}
+          debounceDelay={500}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
 ```
 
 ## Props
