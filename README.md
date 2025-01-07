@@ -120,24 +120,6 @@ export default App;
 | dropDownBorderRadius    | string                          | Border radius of the dropdown.                             | '8px'                             |
 | scrollBarColor          | string                          | Color of the scrollbar inside the dropdown.                | #ccc                              |
 
-## Example
-
-### Basic Example
-
-```tsx
-<SearchBar
-  fetchData={async (query: string) => {
-    const response = await fetch('https://api.example.com/search?q=${query}');
-    return response.json();
-  }}
-  renderItem={(item) => <div>{item.name}</div>}
-  onSelect={(item) => console.log('Selected:', item)}
-  placeholder='Search for items...'
-  loadingElement={<div>Loading...</div>}
-  emptyElement={<div>No results found</div>}
-/>
-```
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/ghosnkarl/react-api-search/blob/main/LICENSE) file for more information.
