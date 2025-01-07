@@ -1,8 +1,6 @@
 import { useState, useEffect, ChangeEvent, useRef } from 'react';
 import styles from './SearchBar.module.css';
 import { SearchBarProps } from './types';
-import { MdSearch } from 'react-icons/md';
-import { MdClose } from 'react-icons/md';
 import Dropdown from './Dropdown';
 import InputField from './InputField';
 
